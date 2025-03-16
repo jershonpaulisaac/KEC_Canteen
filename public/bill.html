@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC Canteen Bill</title>
+    <link rel="stylesheet" href="stylesindex.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        .bill-container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: 2px dashed #444;
+        }
+        h2 {
+            margin: 5px 0;
+            color: #362417;
+        }
+        .canteen-details {
+            font-size: 14px;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .total {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .payment-method {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        .footer {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding-top: 5px;
+        }
+        #print-bill-btn {
+            background-color: #362417;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        #print-bill-btn:hover {
+            background-color: #92817A;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bill-container">
+        <h2>KEC Canteen</h2>
+        <p class="canteen-details">
+            Kings Engineering College<br>
+            Chennai – Bangalore Highway, Taluk, opposite to HYUNDAI MOTOR, Sriperumbudur, Irungattukottai, Tamil Nadu 602117<br>
+            Phone:  044-71224400
+        </p>
+
+        <hr>
+        <p><strong>Date:</strong> <span id="bill-date"></span></p>
+
+        <h3>Order Summary</h3>
+        <table id="bill-table">
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price (₹)</th>
+            </tr>
+        </table>
+
+        <p class="total">Total Amount: ₹<span id="bill-total"></span></p>
+        <p class="payment-method"><strong>Payment Mode:</strong> UPI / Cash</p>
+
+        <button id="print-bill-btn" onclick="window.print()">Print Bill</button>
+        <p class="footer">Thank you for visiting KEC Canteen! 🍽</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
+            let billTable = document.getElementById("bill-table");
+            let totalAmount = 0;
+
+            orderDetails.forEach((entry) => {
+                totalAmount += entry.price * entry.quantity;
+                let row = billTable.insertRow();
+                row.innerHTML = `<td>${entry.item}</td><td>${entry.quantity}</td><td>₹${entry.price * entry.quantity}</td>`;
+            });
+
+            document.getElementById("bill-total").innerText = totalAmount;
+            document.getElementById("bill-date").innerText = new Date().toLocaleString();
+        });
+    </script>
+
+</body>
+</html>

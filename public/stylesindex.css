@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('menubg.jpeg');  /* Change 'menu-bg.jpg' to your image file */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('menubg.jpeg') center/cover no-repeat fixed;
+    filter: blur(3px); /* Adjust for lighter or stronger blur */
+    z-index: -1;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    color: #362417;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 🔹 Updated Order (+) Button */
+.order-btn {
+    background-color: #362417;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔹 Hover effect */
+.order-btn:hover {
+    background-color: #92817A;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #362417;
+}
+
+.welcome-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.canteen-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#qr-code {
+    display: none;
+    margin-top: 20px;
+}
+
+/* 🔹 Updated Remove Button */
+.remove-btn {
+    background: #d9534f; /* Red color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.remove-btn:hover {
+    background: #7c0400;
+}
+
+/* 🔹 Pay and Show Bill Buttons */
+.pay-btn, .bill-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.pay-btn:hover, .bill-btn:hover {
+    background-color: #0056b3;
+}

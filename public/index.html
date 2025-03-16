@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC Canteen</title>
+    <link rel="stylesheet" href="stylesindex.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>KEC Canteen</h1>
+        <h3>Afternoon Menu</h3>
+        <div id="menu">
+            <div class="menu-item">
+                <span>Sambar Rice - ₹75</span>
+                <button class="order-btn" onclick="addToCart('Sambar Rice', 75)">+</button>
+            </div>
+            <div class="menu-item">
+                <span>Meals - ₹75</span>
+                <button class="order-btn" onclick="addToCart('Meals', 75)">+</button>
+            </div>
+            <div class="menu-item">
+                <span>Tomato Rice - ₹75</span>
+                <button class="order-btn" onclick="addToCart('Tomato Rice', 75)">+</button>
+            </div>
+            <div class="menu-item">
+                <span>Veg Fried Rice - ₹75</span>
+                <button class="order-btn" onclick="addToCart('Veg Fried Rice', 75)">+</button>
+            </div>
+            <div class="menu-item">
+                <span>Chappati (1 nos) - ₹20</span>
+                <button class="order-btn" onclick="addToCart('Chappati (1 nos)', 20)">+</button>
+            </div>
+            <div class="menu-item">
+                <span>Veg Noodles - ₹75</span>
+                <button class="order-btn" onclick="addToCart('Veg Noodles', 75)">+</button>
+            </div>
+        </div>
+
+        <h3>Cart</h3>
+        <div id="cart"></div>
+        <p><strong>Total: ₹<span id="total">0</span></strong></p>
+
+        <button class="pay-btn" onclick="payNow()">Proceed to Pay</button>
+
+        <div id="qr-code">
+            <h3>Scan QR Code to Pay</h3>
+            <img id="qr-image" src="" alt="QR Code" width="200"><br>
+            <button class="bill-btn" onclick="showBill()">Show Bill</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
