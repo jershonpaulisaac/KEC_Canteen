@@ -11,7 +11,7 @@ function addToCart(item, price) {
 }
 
 function updateCart() {
-    let orderList = document.getElementById('cart'); // Fixed ID name for cart display
+    let orderList = document.getElementById('cart'); 
     let total = 0;
     orderList.innerHTML = "";
 
@@ -48,31 +48,25 @@ function payNow() {
     }
 
     let totalAmount = document.getElementById('total').innerText;
-    let upiID = "upiid@okhdfcbank";  // 🔹 Replace with your actual UPI ID
-    let gpayUPILink = `upi://pay?pa=${upiID}&pn=KEC Canteen&mc=0000&tid=123456&tr=ORDER123&tn=Canteen Order&am=${totalAmount}&cu=INR`;
+    let upiID = "jershonpaul2006@okaxis"; // Replace with actual UPI ID
 
-    let qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(gpayUPILink)}`;
-
-    document.getElementById('qr-image').src = qrCodeURL;
-    document.getElementById('qr-code').style.display = 'block';
-
-    // ✅ Open GPay directly if on mobile
-    window.location.href = gpayUPILink;
-
-    localStorage.setItem("orderDetails", JSON.stringify(cart));
-}
-
-function showBill() {
-    if (cart.length === 0) {
-        alert("Your cart is empty. Add items first.");
+    if (upiID === "yourname@upi") {
+        alert("Please replace 'yourname@upi' with your actual UPI ID.");
         return;
     }
-    localStorage.setItem("orderDetails", JSON.stringify(cart));
-    window.location.href = "bill.html";
-}
 
-// ✅ Function to clear the cart after payment
-function clearCart() {
-    cart = [];
-    updateCart();
+    // ✅ Generate QR Code for UPI Payment (Without Backend)
+    let upiLink = `upi://pay?pa=${upiID}&pn=KEC Canteen&mc=&tid=&tr=&tn=Order Payment&am=${totalAmount}&cu=INR`;
+    let qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiLink)}`;
+
+    // ✅ Store Payment Data in localStorage
+    localStorage.setItem("paymentData", JSON.stringify({
+        qrCodeURL: qrCodeURL,
+        upiLink: upiLink,
+        totalAmount: totalAmount,
+        cartItems: cart
+    }));
+
+    // 🔹 Redirect to Payment Page
+    window.location.href = "payment.html";
 }
