@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +49,28 @@
             <button class="bill-btn" onclick="showBill()">Show Bill</button>
         </div>
     </div>
+     <!-- Complaint Button -->
+  <button id="complaintBtn">Complain</button>
 
-    <script src="script.js"></script>
+  <!-- Complaint Modal -->
+  <div id="complaintModal" class="modal">
+    <div class="modal-content">
+      <h2>Complaint Form</h2>
+      <form id="complaintForm">
+        <input type="text" name="name" placeholder="Student Name" required>
+        <input type="text" name="dept" placeholder="Department" required>
+        <input type="text" name="year" placeholder="Year" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required pattern="\d{10}" maxlength="10" title="Enter exactly 10 digits">
+        <textarea name="complaint" placeholder="Your Complaint" required></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+    </div>
+  </div>
+
+  <!-- Success Message -->
+  <div id="successMsg">Your complaint is registered!</div>
+
+  <script src="script.js"></script>
 </body>
 </html>

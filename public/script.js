@@ -48,7 +48,7 @@ function payNow() {
     }
 
     let totalAmount = document.getElementById('total').innerText;
-    let upiID = "jershonpaul2006@okaxis"; // Replace with actual UPI ID
+    let upiID = "8608614494-2@ibl";
 
     if (upiID === "yourname@upi") {
         alert("Please replace 'yourname@upi' with your actual UPI ID.");
@@ -70,3 +70,31 @@ function payNow() {
     // 🔹 Redirect to Payment Page
     window.location.href = "payment.html";
 }
+
+
+const complaintBtn = document.getElementById('complaintBtn');
+const complaintModal = document.getElementById('complaintModal');
+const complaintForm = document.getElementById('complaintForm');
+const successMsg = document.getElementById('successMsg');
+
+complaintBtn.onclick = () => {
+  complaintModal.style.display = 'flex';
+};
+
+function closeModal() {
+  complaintModal.style.display = 'none';
+}
+
+complaintForm.onsubmit = function(e) {
+  e.preventDefault();
+
+
+  // Show success message
+  complaintModal.style.display = 'none';
+  successMsg.style.display = 'block';
+  setTimeout(() => {
+    successMsg.style.display = 'none';
+  }, 3000);
+
+  complaintForm.reset();
+};
