@@ -57,3 +57,14 @@ button:hover {
     background-color: #e68900;
     transform: scale(1.05);
 }
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #000000;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}

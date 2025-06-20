@@ -48,13 +48,18 @@
             font-size: 14px;
             color: #555;
         }
-        .footer {
-            font-size: 12px;
-            color: #666;
-            margin-top: 10px;
-            border-top: 1px solid #ddd;
-            padding-top: 5px;
+         .footer {
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ffffff;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
         }
+        
         #print-bill-btn {
             background-color: #362417;
             color: white;
@@ -67,6 +72,7 @@
         #print-bill-btn:hover {
             background-color: #92817A;
         }
+        
     </style>
 </head>
 <body>
@@ -78,7 +84,7 @@
             Chennai – Bangalore Highway, Taluk, opposite to HYUNDAI MOTOR, Sriperumbudur, Irungattukottai, Tamil Nadu 602117<br>
             Phone:  044-71224400
         </p>
-
+       
         <hr>
         <p><strong>Date:</strong> <span id="bill-date"></span></p>
 
@@ -93,9 +99,10 @@
 
         <p class="total">Total Amount: ₹<span id="bill-total"></span></p>
         <p class="payment-method"><strong>Payment Mode:</strong> UPI / Cash</p>
+        
+         <button id="print-bill-btn" onclick="window.print()">Print Bill</button>
 
-        <button id="print-bill-btn" onclick="window.print()">Print Bill</button>
-        <p class="footer">Thank you for visiting KEC Canteen! 🍽</p>
+        
     </div>
 
     <script>
@@ -114,6 +121,6 @@
             document.getElementById("bill-date").innerText = new Date().toLocaleString();
         });
     </script>
-
+     <p class="footer">Made with ❤️ for KEC | Crafted by Jershon Paul Isaac R</p>
 </body>
 </html>
