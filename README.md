@@ -18,6 +18,3 @@ A fully functional **frontend food ordering system** built for Kings Engineering
 - CSS3
 - JavaScript (Vanilla)
 - Firebase (for future integration / analytics)
-
-## 📂 Project Structure
-
