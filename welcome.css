@@ -1,0 +1,84 @@
+/* Base Style */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('menubg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+/* Welcome Container */
+.welcome-container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #362417;
+  margin-bottom: 10px;
+}
+
+h1 span {
+  color: #ff9800;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Image */
+.canteen-img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Button */
+.menu-btn {
+  display: inline-block;
+  background-color: #362417;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #5a3624;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px #000;
+}

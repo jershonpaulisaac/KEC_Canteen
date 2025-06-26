@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KEC Canteen Bill</title>
+  <link rel="stylesheet" href="bill.css" />
+</head>
+<body>
+  <div class="bill-container">
+    <h2>KEC Canteen</h2>
+    <p class="canteen-details">
+      Kings Engineering College<br>
+      Chennai – Bangalore Highway, Taluk, opposite to HYUNDAI MOTOR, Sriperumbudur,<br>
+      Irungattukottai, Tamil Nadu 602117<br>
+      Phone: 044-71224400
+    </p>
+
+    <hr>
+
+    <p><strong>Name:</strong> <span id="bill-name"></span></p>
+    <p><strong>Transaction ID:</strong> <span id="bill-txn"></span></p>
+    <p><strong>Date:</strong> <span id="bill-date"></span></p>
+
+    <h3>Order Summary</h3>
+    <table id="bill-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price (₹)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <p class="total"><strong>Total Amount:</strong> ₹<span id="bill-total"></span></p>
+    <p class="payment-method"><strong>Payment Mode:</strong> UPI</p>
+    <p class="canteen-details">🍽 Thanks For Visiting</p>
+    <h3>Your One-Time Ticket QR</h3>
+    <p><strong>Ticket ID:</strong> <span id="ticket-id"></span></p>
+    <canvas id="ticket-qr"></canvas>
+
+
+    <button id="print-bill-btn" onclick="window.print()">🖨 Print Bill</button>
+    <br><br>
+    <button onclick="window.location.href='menu.html'" id="back-btn">⬅ Back to Menu</button>
+    <button onclick="window.location.href='payment.html'" id="scan-btn">🔄 Scan Again</button>
+  </div>
+
+  <p class="footer">Developed by <strong>Jershon Paul Isaac R</strong></p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+  <script src="bill.js"></script>
+</body>
+</html>

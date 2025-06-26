@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KEC Canteen</title>
-    <link rel="stylesheet" href="stylesindex.css">
+    <link rel="stylesheet" href="menu.css">
 </head>
 
 <body>
@@ -49,28 +49,7 @@
             <button class="bill-btn" onclick="showBill()">Show Bill</button>
         </div>
     </div>
-     <!-- Complaint Button -->
-  <button id="complaintBtn">Complain</button>
-
-  <!-- Complaint Modal -->
-  <div id="complaintModal" class="modal">
-    <div class="modal-content">
-      <h2>Complaint Form</h2>
-      <form id="complaintForm">
-        <input type="text" name="name" placeholder="Student Name" required>
-        <input type="text" name="dept" placeholder="Department" required>
-        <input type="text" name="year" placeholder="Year" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required pattern="\d{10}" maxlength="10" title="Enter exactly 10 digits">
-        <textarea name="complaint" placeholder="Your Complaint" required></textarea>
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
-      <button class="close-btn" onclick="closeModal()">&times;</button>
-    </div>
-  </div>
-
-  <!-- Success Message -->
-  <div id="successMsg">Your complaint is registered!</div>
-  <p class="footer">Made with ❤️ for KEC | Crafted by Jershon Paul Isaac R</p>
-  <script src="script.js"></script>
+  <p class="footer">Developed by <strong>Jershon Paul Isaac R</strong> </p>
+  <script src="menu.js"></script>
 </body>
 </html>

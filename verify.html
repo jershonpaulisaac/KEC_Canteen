@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head><title>Verify Ticket</title></head>
+<body>
+  <h1>Ticket Verification</h1>
+  <p id="result">Processing...</p>
+  <script>
+    (async () => {
+      const params = new URLSearchParams(location.search);
+      const ticketId = params.get("id");
+      const usedKey = `ticket_${ticketId}_used`;
+      const used = localStorage.getItem(usedKey);
+
+      if (!ticketId) {
+        return document.getElementById("result").innerText = "❌ Invalid Ticket";
+      }
+      if (used === "true") {
+        return document.getElementById("result").innerText = "❌ Ticket already used.";
+      }
+
+      const bill = JSON.parse(localStorage.getItem("billData"));
+      if (!bill || !bill.txnId) {
+        return document.getElementById("result").innerText = "❌ No bill data available.";
+      }
+
+      // Mark used locally
+      localStorage.setItem(usedKey, "true");
+
+      // Send to Google Sheets
+      const payload = {
+        ticketId,
+        name: bill.name,
+        txnId: bill.txnId,
+        date: bill.date,
+        amount: bill.amount,
+        items: bill.items
+      };
+
+      try {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbyt3gNCpQ7F1g7D1TAyCrVw7l1FUVLrtt92trC7jK8OmJe5AGTtZ6csVIlGKX5_uRA/exec", {
+          method: "POST",
+          headers: {"Content-Type":"application/json"},
+          body: JSON.stringify(payload)
+        });
+        const responseText = await res.text();
+        console.log("Response:", res.status, responseText);
+        if (res.ok) {
+          document.getElementById("result").innerText = `✅ Ticket valid and logged.`;
+        } else {
+          document.getElementById("result").innerText = "⚠️ Ticket valid but logging failed.";
+        }
+      } catch (err) {
+        console.error(err);
+        document.getElementById("result").innerText = "❌ Network error.";
+      }
+    })();
+  </script>
+</body>
+</html>

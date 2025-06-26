@@ -85,10 +85,34 @@ h1 {
   width: 100%;
   text-align: center;
   font-size: 0.9rem;
-  color: #ffffff;
+  color: #ffffff78;
   padding: 15px 0;
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 1000;
 }
+#back-btn {
+    position: fixed;
+    top: 80%;
+    left: 45%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffffcc;
+    border: 1px solid #ffffffbc;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+    }
+
+    #back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: #ffffff66;
+    transform: translateY(-50%) scale(1.05);
+    }

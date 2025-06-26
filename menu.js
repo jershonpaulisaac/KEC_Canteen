@@ -50,11 +50,6 @@ function payNow() {
     let totalAmount = document.getElementById('total').innerText;
     let upiID = "8608614494-2@ibl";
 
-    if (upiID === "yourname@upi") {
-        alert("Please replace 'yourname@upi' with your actual UPI ID.");
-        return;
-    }
-
     // ✅ Generate QR Code for UPI Payment (Without Backend)
     let upiLink = `upi://pay?pa=${upiID}&pn=KEC Canteen&mc=&tid=&tr=&tn=Order Payment&am=${totalAmount}&cu=INR`;
     let qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiLink)}`;
