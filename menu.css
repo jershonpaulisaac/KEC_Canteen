@@ -22,6 +22,7 @@ body::before {
 
 
 .container {
+   width: 100%;
     max-width: 800px;
     margin: auto;
     padding: 20px;
@@ -122,10 +123,7 @@ h1 {
   font-size: 0.9rem;
   color: #ffffff78;
   padding: 15px 0;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
+  
 }
 #complaint-float-btn {
   position: fixed;

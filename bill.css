@@ -88,7 +88,7 @@ th, td {
 .footer {
     width: 100%;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 20px;
     color: #ffffff78;
     padding: 15px 0;
     margin-top: 30px;
@@ -108,35 +108,25 @@ th, td {
     background-color: #92817A;
 }
 
-#back-btn, #scan-btn {
-    position: fixed;
-    left: 23%;
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #ffffffcc;
-    border: 1px solid #ffffffbc;
-    padding: 10px 20px;
-    font-size: 15px;
-    border-radius: 8px;
-    backdrop-filter: blur(6px);
-    cursor: pointer;
-    z-index: 1001;
-    transition: all 0.3s ease-in-out;
-    font-weight: 500;
-}
-
-#back-btn {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#scan-btn {
-    top: 60%;
-    transform: translateY(-50%);
-}
-
 #back-btn:hover, #scan-btn:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: rgb(0, 0, 0);
     border-color: #ffffff66;
     transform: translateY(-50%) scale(1.05);
+}
+#back, #scan{
+    cursor: pointer;
+    width: 35%;
+    font-size: 20px;
+    color: #000000;
+    background-color: #0000001c;
+    border-radius: 8px;
+    border-style:dotted;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    backdrop-filter: blur(6px);
+    padding: 10 20 px;
+}
+#back:hover, #scan:hover{
+    background-color: #000000a7;
+    color: #f8f8f8;
 }
