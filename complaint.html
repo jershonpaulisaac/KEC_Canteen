@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Complaint</title>
+  <link rel="stylesheet" href="complaint.css" />
+</head>
+<body>
+  <a href="menu.html" id="home-btn">🏠 Menu</a>
+
+  <div class="container">
+    <h1>Student Complaint Form</h1>
+    <form id="complaintForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="text" id="dept" placeholder="Department" required />
+      <input type="text" id="year" placeholder="Year" required />
+      <input type="tel" id="phone" placeholder="Phone number" required />
+      <textarea id="msg" placeholder=" Type your Complaint " rows="5" required></textarea>
+      <button type="submit">Submit</button>
+      <p id="status"></p>
+    </form>
+  </div>
+  <script src="complaint.js"></script>
+</body>
+</html>
