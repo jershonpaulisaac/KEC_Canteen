@@ -8,27 +8,40 @@
 
 <body>
     <div class="container">
-        <h1>Kings Canteen</h1>
-        <h3>Afternoon Menu</h3>
+        <h1>Kings Canteen</h1><hr><br>
+        <h3>Morning Menu</h3>
         <div id="menu">
             <div class="menu-item">
-                <span>Sambar Rice - ₹75</span>
-                <button class="order-btn" onclick="addToCart('Sambar Rice', 75)">+</button>
+                <span>Idly [3 nos] - ₹35</span>
+                <button class="order-btn" onclick="addToCart('Sambar Rice', 35)">+</button>
+            </div>
+            <div class="menu-item">
+                <span>Pongal - ₹35</span>
+                <button class="order-btn" onclick="addToCart('Sambar Rice', 35)">+</button>
+            </div>
+            <div class="menu-item">
+                <span>Vadai [1 nos] - ₹12</span>
+                <button class="order-btn" onclick="addToCart('Sambar Rice', 12)">+</button>
+            </div><br><br>
+             <h3>Afternoon Menu</h3>
+            <div class="menu-item">
+                <span>Sambar Rice - ₹60</span>
+                <button class="order-btn" onclick="addToCart('Sambar Rice', 60)">+</button>
             </div>
             <div class="menu-item">
                 <span>Meals - ₹75</span>
                 <button class="order-btn" onclick="addToCart('Meals', 75)">+</button>
             </div>
             <div class="menu-item">
-                <span>Tomato Rice - ₹75</span>
-                <button class="order-btn" onclick="addToCart('Tomato Rice', 75)">+</button>
+                <span>Tomato Rice - ₹60</span>
+                <button class="order-btn" onclick="addToCart('Tomato Rice', 60)">+</button>
             </div>
             <div class="menu-item">
                 <span>Veg Fried Rice - ₹75</span>
                 <button class="order-btn" onclick="addToCart('Veg Fried Rice', 75)">+</button>
             </div>
             <div class="menu-item">
-                <span>Chappati (1 nos) - ₹20</span>
+                <span>Chappati [1 nos] - ₹20</span>
                 <button class="order-btn" onclick="addToCart('Chappati (1 nos)', 20)">+</button>
             </div>
             <div class="menu-item">
@@ -41,7 +54,7 @@
         <div id="cart"></div>
         <p><strong>Total: ₹<span id="total">0</span></strong></p>
 
-        <button class="pay-btn" onclick="payNow()">Proceed to Pay</button>
+        <button class="pay-btn" onclick="payNow()"><strong>Proceed to Pay</strong></button>
 
         <div id="qr-code">
             <h3>Scan QR Code to Pay</h3>
